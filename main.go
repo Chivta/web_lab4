@@ -10,7 +10,6 @@ import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
-
 // @title Library API
 // @version 1.0
 // @description REST API for library management with SQLite database
@@ -28,7 +27,7 @@ func main() {
 
 	r := gin.Default()
 
-	// Serve static files
+	// serving static files
 	r.Static("/static", "./static")
 	r.StaticFile("/", "./static/index.html")
 

@@ -78,7 +78,6 @@ func (c *Cache) InvalidatePattern(pattern string) {
 
 	invalidatedCount := 0
 	for key := range c.entries {
-		// Simple pattern matching: if key starts with pattern or contains pattern
 		if len(key) >= len(pattern) && key[:len(pattern)] == pattern {
 			delete(c.entries, key)
 			invalidatedCount++
@@ -98,7 +97,6 @@ func (c *Cache) Clear() {
 	log.Printf("Cache CLEAR: cleared %d entries", count)
 }
 
-// Helper functions to generate cache keys
 func BookListKey() string {
 	return "books:list"
 }
